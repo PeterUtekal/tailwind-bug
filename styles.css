@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-tailwind-defaults {
+	@apply p-0 m-0 border-none;
+}
+
+@layer components {
+	.btn-primary-green {
+		@apply flex items-center gap-2 justify-center bg-gradient-to-r from-green-500 via-green-400 to-green-600 px-5 p-2 text-white font-semibold mx-auto rounded-full;
+	}
+
+	.btn-main {
+		@apply text-white gradient-button border-none bg-gradient-to-r from-green-500 via-green-400 to-green-600;
+	}
+}
+
+@keyframes fadeInScale {
+	0% {
+		opacity: 0;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.animate-fadeInScale {
+	animation: fadeInScale 0.4s ease-out forwards;
+}
+
+.default-background {
+	background-image: linear-gradient(to right, #9747ff, #684dff);
+}
+.masonry {
+	column-count: 3;
+	column-gap: 1em;
+}
+
+.masonry img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-bottom: 1em;
+}
+
+.htmx-request {
+	display: block !important;
+}
+
+.image-wrapper {
+	position: relative;
+}
+
+.download-btn {
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	text-decoration: none;
+}
+
+ul.list-disc {
+	border-bottom: none; /* Removes any bottom border */
+	/* Additional styling here */
+}
+.loading-btn {
+	pointer-events: none;
+	cursor: progress;
+}
+
+.lock-blur {
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(15px);
+	-o-filter: blur(15px);
+	-ms-filter: blur(15px);
+	filter: blur(15px);
+}
+
+.lock-blur-sm {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+
+@font-face {
+	font-family: "Caveat Bold";
+	src: url("/fonts/Caveat-Bold.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "Caveat Medium";
+	src: url("/fonts/Caveat-Medium.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "Caveat Regular";
+	src: url("/fonts/Caveat-Regular.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "Caveat SemiBold";
+	src: url("/fonts/Caveat-SemiBold.ttf")
+		format("truetype");
+}
+
+.script-font {
+	font-family: "Caveat Regular", sans-serif;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Black.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Geist";
+	src: url("/fonts/Geist-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+.video-container video {
+	clip-path: inset(0); /* Adjust the values to cut off the green area */
+}
+
+body {
+	font-family: "Geist", sans-serif;
+}
+
+.course {
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+.chat-upgrade {
+	backdrop-filter: blur(10px);
+	pointer-events: none !important;
+}
+
+#suggestions::-webkit-scrollbar {
+	display: none;
+}
+
+#suggestions {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.fullscreen-chat {
+	position: fixed !important;
+	top: 10px !important;
+	left: 50% !important;
+	bottom: 10px !important;
+	transform: translateX(-50%) !important;
+	height: calc(100vh - 20px) !important;
+	width: 1200px !important;
+	max-width: 90% !important;
+}
+
+@media only screen and (max-width: 600px) {
+	#main-chat {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0 !important;
+		width: 100vw !important;
+		height: 100vsh !important;
+		z-index: 9999999999;
+		overflow: hidden !important;
+	}
+}
+
+#main-chat {
+	width: 600px;
+	height: 700px;
+	z-index: 999999999;
+	bottom: 0;
+	right: 0;
+}
+
+.bg-gradient {
+	background-image: linear-gradient(to right, #1ce28f, #15ab6c);
+	transition: background-position 0.5s ease-out;
+	background-size: 200% auto;
+	background-position: 0% center;
+}
+html {
+	margin: 0;
+	padding: 0;
+}
+
+.bg-gradient:hover {
+	background-position: 100% center;
+}
+.editable:hover {
+	outline: 2px solid #8c48fe;
+	border-radius: 5px;
+}
+
+.animate-charcter {
+	background-image: linear-gradient(-225deg, #190c2e 20%, #5f44f6 100%);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #190c2e;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.blur {
+	filter: blur(5px);
+}
+
+.btn-primary[data-theme="light"] {
+	background-color: #7b61ff !important;
+	color: white !important;
+	border: none !important;
+}
+
+.btn-primary[data-theme="light"]:hover {
+	background-color: #6b4efd !important;
+	border: none !important;
+}
+
+.gradient-button {
+	background-size: 200% 200%;
+	animation: gradient-animation 3s ease infinite;
+	transition: 0.3s;
+}
+
+.gradient-button:hover {
+	transform: scale(1.05);
+}
+
+.main-btn:hover {
+	transform: scale(1.05);
+}
+.main-btn {
+	transition: 0.3s;
+}
+
+.lds-ellipsis {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.lds-ellipsis div {
+	position: absolute;
+	top: 33px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+	left: 8px;
+	animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+	left: 8px;
+	animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+	left: 32px;
+	animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+	left: 56px;
+	animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes lds-ellipsis3 {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes lds-ellipsis2 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(24px, 0);
+	}
+}
+
