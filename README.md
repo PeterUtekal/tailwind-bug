@@ -6,7 +6,7 @@ npm i
 
 npx tailwindcss -i styles.css -o output.css
 
-npx tailwindcss -o dist/output.css --minify
+npx tailwindcss -o output.css --minify
 
 php -S localhost:3000
 
